@@ -1,0 +1,48 @@
+[
+  {
+    "name": "Healthy Meal Plan",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 23.99,
+    "status": "breakfast",
+    "image": ""
+  },
+  {
+    "name": "Fried Chicken Bento",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 10.99,
+    "status": "breakfast",
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg02.png"
+  },
+  {
+    "name": "Fried Chicken Bento",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 10.99,
+    "status": "breakfast",
+    "id": 3,
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg03.png"
+  },
+  {
+    "name": "Tarragon Rubbel-Salmon",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 6.99,
+
+    "status": "breakfast",
+    "image": ""
+  },
+  {
+    "name": "Indian breakfast",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 8.99,
+
+    "status": "breakfast",
+    "image": ""
+  },
+  {
+    "name": "Beaf Steak",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 12.99,
+
+    "status": "breakfast",
+    "image": ""
+  }
+]
