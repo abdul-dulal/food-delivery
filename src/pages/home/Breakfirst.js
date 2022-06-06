@@ -10,7 +10,7 @@ const Breakfirst = () => {
   }, []);
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-16">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 px-16">
       {breakfast?.map((meal) => (
         <ShowBreakfast key={Math.random()} meal={meal} />
       ))}

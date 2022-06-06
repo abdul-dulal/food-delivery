@@ -1,13 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import bg from "../assets/images/bannerbackground.png";
-
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import { useNavigate } from "react-router-dom";
 const Contact = () => {
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth);
   const { register, handleSubmit, errors, reset } = useForm();
+  const navigate = useNavigate();
   const onSubmit = (data) => {
-    console.log(data);
+    createUserWithEmailAndPassword(data.email, data.password);
     reset();
   };
+
+  if (user) {
+    navigate("/");
+  }
   return (
     <div
       class="hero min-h-screen bg-base-200"
@@ -35,6 +44,7 @@ const Contact = () => {
                 <span class="label-text">Password</span>
               </label>
               <input
+                type="password"
                 {...register("password")}
                 placeholder="password"
                 class="input input-bordered"

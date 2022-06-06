@@ -2,7 +2,14 @@ import React from "react";
 import logo from "../assets/images/logo.png";
 import { BsCartPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import useCart from "../hooks/useCart";
+import Loading from "./Loading";
 const Navbar = ({ children }) => {
+  const [cart] = useCart();
+
+  // if (isLoading) {
+  //   return <Loading />;
+  // }
   return (
     <div>
       <div class="drawer ">
@@ -29,16 +36,25 @@ const Navbar = ({ children }) => {
             </div>
             <div class="flex-1 px-2 mx-2">
               <Link to="/">
-                <img src={logo} className="h-9" w-9 alt="" />{" "}
+                <img src={logo} className="h-9" w-9 alt="" />
               </Link>
             </div>
             <div class="flex-none hidden lg:block px-12 text-xl uppercase font-bold">
               <ul class="menu menu-horizontal">
-                {/* <!-- Navbar menu content here --> */}
                 <li>
-                  <a>
-                    <BsCartPlus />
-                  </a>
+                  <Link to="/cart">
+                    <div class="indicator">
+                      <span
+                        class="indicator-item badge badge-secondary"
+                        refetch
+                      >
+                        {cart?.length > 0 ? cart.length : "0"}
+                      </span>
+                      <span className="text-3xl   ">
+                        <BsCartPlus />
+                      </span>
+                    </div>
+                  </Link>
                 </li>
                 <li>
                   <Link to="/contact">Cotanct</Link>
@@ -46,13 +62,12 @@ const Navbar = ({ children }) => {
               </ul>
             </div>
           </div>
-          {/* <!-- Page content here --> */}
+
           {children}
         </div>
         <div class="drawer-side">
           <label for="my-drawer-3" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-            {/* <!-- Sidebar content here --> */}
             <li>
               <a>
                 <BsCartPlus />

@@ -18,9 +18,6 @@ const ShowBreakfast = ({ meal }) => {
           <h2 class="card-title">{name}</h2>
           <p>{description}</p>
           <p className="font-bold"> $ {price}</p>
-          <div class="card-actions">
-            <button class="btn btn-primary">Buy Now</button>
-          </div>
         </div>
       </div>
     </button>

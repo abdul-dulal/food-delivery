@@ -4,10 +4,10 @@
     "description": "Steak FritesSteak Frites is a very popular dish served ",
     "price": 23.99,
     "status": "breakfast",
-    "image": ""
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg01.png"
   },
   {
-    "name": "Fried Chicken Bento",
+    "name": "Tarragon-Rubbled",
     "description": "Steak FritesSteak Frites is a very popular dish served ",
     "price": 10.99,
     "status": "breakfast",
@@ -18,8 +18,15 @@
     "description": "Steak FritesSteak Frites is a very popular dish served ",
     "price": 10.99,
     "status": "breakfast",
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg02.png"
+  },
+  {
+    "name": "Beef Steak",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 10.99,
+    "status": "breakfast",
     "id": 3,
-    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg03.png"
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg04.png"
   },
   {
     "name": "Tarragon Rubbel-Salmon",
@@ -27,7 +34,7 @@
     "price": 6.99,
 
     "status": "breakfast",
-    "image": ""
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg01.png"
   },
   {
     "name": "Indian breakfast",
@@ -35,7 +42,15 @@
     "price": 8.99,
 
     "status": "breakfast",
-    "image": ""
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg05.png"
+  },
+  {
+    "name": "Honey-Soy",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 12.99,
+
+    "status": "breakfast",
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg01.png"
   },
   {
     "name": "Beaf Steak",
@@ -43,6 +58,6 @@
     "price": 12.99,
 
     "status": "breakfast",
-    "image": ""
+    "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg01.png"
   }
 ]
