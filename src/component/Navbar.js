@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/logo2.png";
 import { BsCartPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import useCart from "../hooks/useCart";
@@ -11,7 +11,7 @@ const Navbar = ({ children }) => {
   //   return <Loading />;
   // }
   return (
-    <div>
+    <div className="">
       <div class="drawer ">
         <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col">
@@ -39,7 +39,7 @@ const Navbar = ({ children }) => {
                 <img src={logo} className="h-9" w-9 alt="" />
               </Link>
             </div>
-            <div class="flex-none hidden lg:block px-12 text-xl uppercase font-bold">
+            <div class="flex-none hidden lg:block px-12   ">
               <ul class="menu menu-horizontal">
                 <li>
                   <Link to="/cart">
@@ -57,7 +57,16 @@ const Navbar = ({ children }) => {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact">Cotanct</Link>
+                  <Link to="/login"> Login</Link>
+                </li>
+                <li>
+                  <Link
+                    to="/signup"
+                    className=" rounded-full px-8  bg-[#E51A4B] text-[18px] text-white"
+                  >
+                    {" "}
+                    Sign up
+                  </Link>
                 </li>
               </ul>
             </div>

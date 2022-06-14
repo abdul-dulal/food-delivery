@@ -22,28 +22,20 @@ const Home = () => {
             <ul class="menu menu-horizontal ">
               <li>
                 <NavLink
-                  to="/"
+                  to="breakfast"
                   style={activeLink}
-                  className=" text-xl font-bold"
+                  className=" text-xl "
                 >
                   Breackfast
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="lunch"
-                  style={activeLink}
-                  className=" text-xl font-bold"
-                >
+                <NavLink to="/" style={activeLink} className=" text-xl ">
                   Lunch
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to="dinner"
-                  style={activeLink}
-                  className=" text-xl font-bold"
-                >
+                <NavLink to="dinner" style={activeLink} className=" text-xl ">
                   Dinner
                 </NavLink>
               </li>

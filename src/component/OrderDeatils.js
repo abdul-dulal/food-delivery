@@ -11,8 +11,6 @@ const OrderDeatils = ({ order, refetch }) => {
       .then((res) => res.json())
       .then((data) => {
         refetch();
-        window.location.reload();
-        console.log(data);
       });
   };
 

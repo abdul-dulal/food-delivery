@@ -24,7 +24,7 @@ const Slider = () => {
       // scrollbar={{ draggable: false }}
     >
       <SwiperSlide>
-        <div className="grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-2 px-14 gap-6 bg-[#FCF4E0] sm:h-screen">
+        <div className="mt-4 grid grid-cols-1 md:grid-cols-2 md:items-center lg:grid-cols-2 px-14 gap-6 bg-[#FCF4E0] sm:h-screen">
           <div className="flex items-center">
             <h1 className=" lg:text-5xl mr-2 uppercase md:text-3xl sm: ml-8 mt-2 text-2xl lg:leading-snug">
               <span className="text-[#ff6347]  lg:text-5xl md:text-3xl  sm:text-5xl sm:text-center font-bold">

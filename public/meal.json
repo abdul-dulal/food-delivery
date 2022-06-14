@@ -59,5 +59,101 @@
 
     "status": "breakfast",
     "image": "https://raw.githubusercontent.com/jahidulislamzim/imageData/main/hungriology/menuImg01.png"
+  },
+  {
+    "name": "Eggs benedict",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "status": "dinner",
+    "price": 14,
+    "image": "https://i.ibb.co/QC0KJPt/breakfast4.png"
+  },
+  {
+    "name": "Bagel and cream cheese",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 15.3,
+    "status": "dinner",
+    "image": "https://i.ibb.co/YWxtdqc/breakfast1.png"
+  },
+  {
+    "name": "Full breakfast egg toas",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 12.14,
+    "status": "dinner",
+    "image": "https://i.ibb.co/fSvwzpZ/breakfast6.png"
+  },
+  {
+    "name": "Toast fried Egg Butter",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 7.99,
+    "status": "dinner",
+    "image": "https://i.ibb.co/pwjPPM3/breakfast5.png"
+  },
+  {
+    "name": "Breakfast sandwich",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "status": "dinner",
+    "price": 8.99,
+    "image": "https://i.ibb.co/t2pmW5S/breakfast2.png"
+  },
+  {
+    "name": "baked chicken",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "status": "dinner",
+    "price": 10.45,
+    "image": "https://i.ibb.co/0FGxwXy/breakfast3.png"
+  },
+  {
+    "name": "French fries with cheese",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "status": "lunch",
+    "price": 16.58,
+    "image": "https://i.ibb.co/Kmvyhdn/dinner6.png"
+  },
+  {
+    "name": "Lemony Salmon",
+    "price": 10.36,
+    "status": "lunch",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "image": "https://i.ibb.co/qFcr7vr/dinner2.png"
+  },
+  {
+    "name": "Pork Tenderiain",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 13.66,
+    "status": "lunch",
+    "image": "https://i.ibb.co/pLtqXfB/dinner3.png"
+  },
+  {
+    "name": "Salmon with Grapefruits",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "status": "lunch",
+    "price": 10.45,
+    "image": "https://i.ibb.co/fqzz97r/dinner1.png"
+  },
+  {
+    "name": "Curlic Butter baked salmon",
+    "status": "lunch",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 14.36,
+    "image": "https://i.ibb.co/Kynmst1/dinner5.png"
+  },
+  {
+    "name": "Baked Chicken",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 14.78,
+    "status": "lunch",
+    "image": "https://i.ibb.co/McDVR1C/dinner4.png"
+  },
+  {
+    "name": "Toad in the Hole",
+    "price": 10.32,
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "image": "https://i.ibb.co/pLtqXfB/dinner3.png"
+  },
+  {
+    "name": "Balti Curry",
+    "description": "Steak FritesSteak Frites is a very popular dish served ",
+    "price": 13.14,
+    "image": "https://i.ibb.co/Kmvyhdn/dinner6.png"
   }
 ]

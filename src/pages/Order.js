@@ -5,25 +5,32 @@ import auth from "../firebase.init";
 import Footer from "./home/Footer";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useQuery } from "react-query";
-import Loading from "../component/Loading";
+import { useEffect } from "react";
 const Order = () => {
   const [quantity, setQuantity] = useState(1);
-  const [order, setOrder] = useState([]);
+
   const { id } = useParams();
+
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
+  const [meal, setMeal] = useState([]);
 
-  const {
-    isLoading,
+  useEffect(() => {
+    fetch(`http://localhost:4000/meal/${id}`)
+      .then((res) => res.json())
+      .then((data) => setMeal(data));
+  }, []);
 
-    data: meal,
-  } = useQuery("repoData", () =>
-    fetch(`http://localhost:4000/meal/${id}`).then((res) => res.json())
-  );
-  if (isLoading) {
-    return <Loading />;
-  }
+  useEffect(() => {
+    fetch(`http://localhost:4000/dinner/${id}`)
+      .then((res) => res.json())
+      .then((data) => setMeal(data));
+  }, []);
+  useEffect(() => {
+    fetch(`http://localhost:4000/lunch/${id}`)
+      .then((res) => res.json())
+      .then((data) => setMeal(data));
+  }, []);
 
   const AddtoCart = () => {
     const cart = {
@@ -50,8 +57,6 @@ const Order = () => {
           toast.success("Successfully add to cart");
         }
       });
-
-    window.location.reload();
   };
 
   return (
@@ -63,8 +68,8 @@ const Order = () => {
         <div className="flex items-center">
           <div>
             <h1 className="text-2xl font-bold">{meal?.name}</h1>
-            <p>{meal.description}</p>
-            <p> $ {meal.price * quantity}</p>
+            <p>{meal?.description}</p>
+            <p> $ {meal?.price * quantity}</p>
             <div className="flex items-center content-center">
               <p className="mt-1 text-xl">Quantity </p>
               <button
