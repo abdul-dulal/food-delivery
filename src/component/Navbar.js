@@ -64,7 +64,6 @@ const Navbar = ({ children }) => {
                     to="/signup"
                     className=" rounded-full px-8  bg-[#E51A4B] text-[18px] text-white"
                   >
-                    {" "}
                     Sign up
                   </Link>
                 </li>

@@ -8,26 +8,25 @@ import "react-toastify/dist/ReactToastify.css";
 import { useEffect } from "react";
 const Order = () => {
   const [quantity, setQuantity] = useState(1);
-
+  const [user] = useAuthState(auth);
+  const [meal, setMeal] = useState([]);
   const { id } = useParams();
 
   const navigate = useNavigate();
-  const [user] = useAuthState(auth);
-  const [meal, setMeal] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/meal/${id}`)
+    fetch(`http://localhost:4000/breakfast/${id}`)
       .then((res) => res.json())
       .then((data) => setMeal(data));
   }, []);
 
-  useEffect(() => {
-    fetch(`http://localhost:4000/dinner/${id}`)
-      .then((res) => res.json())
-      .then((data) => setMeal(data));
-  }, []);
   useEffect(() => {
     fetch(`http://localhost:4000/lunch/${id}`)
+      .then((res) => res.json())
+      .then((data) => setMeal(data));
+  }, []);
+  useEffect(() => {
+    fetch(`http://localhost:4000/dinner/${id}`)
       .then((res) => res.json())
       .then((data) => setMeal(data));
   }, []);
@@ -92,7 +91,7 @@ const Order = () => {
             </div>
             <div className="mt-8">
               <button
-                onClick={() => navigate(`/deliver/${meal._id}`)}
+                onClick={() => navigate(`/payment/${meal._id}`)}
                 className=" px-10 py-4 text-white font-bold rounded bg-[#26ABD4]"
               >
                 Buy Now
