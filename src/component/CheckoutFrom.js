@@ -3,20 +3,24 @@ import React from "react";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useEffect } from "react";
+import { toast } from "react-toastify";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
 const CheckoutFrom = ({ payment }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCarderror] = useState("");
-  const [success, setSuccess] = useState("");
-  const [transitionid, setTransitionid] = useState("");
   const [clientSecret, setClientSecret] = useState("");
-  const { price } = payment;
+  const [transitionid, setTransitionid] = useState("");
+  console.log(transitionid);
+  const { price, description, image, name } = payment;
+  const [user] = useAuthState(auth);
 
   const newPrice = { price: price };
 
   useEffect(() => {
     if (price) {
-      fetch(`http://localhost:4000/create-payment-intent`, {
+      fetch(`https://still-tundra-10310.herokuapp.com/create-payment-intent`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,11 +49,7 @@ const CheckoutFrom = ({ payment }) => {
       type: "card",
       card,
     });
-    // if (error) {
-    //   setCarderror(error);
-    // } else {
-    //   console.log("[PaymentMethod]", paymentMethod);
-    // }
+
     setCarderror(error?.message || "");
 
     // confirm card payment
@@ -67,9 +67,29 @@ const CheckoutFrom = ({ payment }) => {
     } else {
       setCarderror("");
       setTransitionid(paymentIntent.id);
-      setSuccess("your payment success");
-      console.log(paymentIntent);
+      toast.success("your payment success");
+
       // information post krte hbe ei kan teke
+      const payment = {
+        name,
+        description,
+        image,
+        price,
+
+        email: user?.email,
+      };
+
+      fetch("https://still-tundra-10310.herokuapp.com/my-order", {
+        method: "POST", // or 'PUT'
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payment),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
     }
   };
 
@@ -102,12 +122,6 @@ const CheckoutFrom = ({ payment }) => {
         </button>
       </form>
       {cardError && <h1 className="text-red-700  ml-3"> {cardError}</h1>}
-      {success && (
-        <div>
-          <h1 className="text-green-700  ml-3"> {success}</h1>
-          <p className="ml-3">Your Transsition Id {transitionid}</p>
-        </div>
-      )}
     </div>
   );
 };

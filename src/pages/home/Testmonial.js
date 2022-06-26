@@ -18,15 +18,15 @@ const Testmonial = () => {
           Quidem, amet?
         </p>
       </div>
-      <div className="grid  lg:grid-cols-3 gap-5 px-12 md: ml-32">
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+      <div className="grid md:grid-cols-2 md:gap-10 lg:grid-cols-3 lg:gap-5 px-5 lg:px-12  ">
+        <div class="card card-compact mx-w-96 bg-base-100 shadow-xl">
           <figure>
-            <img src={blog1} alt="Shoes" />
+            <img src={blog1} width="100%" alt="Shoes" />
           </figure>
           <div class="card-body">
             <div className="flex">
               <div>
-                <img src={icon1} className="w-24" alt="" />
+                <img src={icon1} className="w-full" alt="" />
               </div>
               <div className="ml-6">
                 <h1 class="card-title">Fast Delivery</h1>
@@ -48,9 +48,9 @@ const Testmonial = () => {
             </div>
           </div>
         </div>
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <div class="card card-compact mx-w-96 bg-base-100 shadow-xl">
           <figure>
-            <img src={blog2} alt="Shoes" />
+            <img src={blog2} width="100%" alt="Shoes" />
           </figure>
           <div class="card-body">
             <div className="flex">
@@ -77,9 +77,9 @@ const Testmonial = () => {
             </div>
           </div>
         </div>
-        <div class="card card-compact w-96 bg-base-100 shadow-xl">
+        <div class="card card-compact mx-w-96 bg-base-100 shadow-xl ">
           <figure>
-            <img src={blog3} alt="Shoes" />
+            <img src={blog3} width="100%" alt="Shoes" />
           </figure>
           <div class="card-body">
             <div className="flex">

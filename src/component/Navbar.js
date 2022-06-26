@@ -4,12 +4,13 @@ import { BsCartPlus } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import useCart from "../hooks/useCart";
 import Loading from "./Loading";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../firebase.init";
+import LogOut from "./LogOut";
 const Navbar = ({ children }) => {
-  const [cart] = useCart();
-
-  // if (isLoading) {
-  //   return <Loading />;
-  // }
+  const { cart, refetch } = useCart();
+  const [user] = useAuthState(auth);
+  console.log(cart);
   return (
     <div className="">
       <div class="drawer ">
@@ -44,10 +45,7 @@ const Navbar = ({ children }) => {
                 <li>
                   <Link to="/cart">
                     <div class="indicator">
-                      <span
-                        class="indicator-item badge badge-secondary"
-                        refetch
-                      >
+                      <span class="indicator-item badge badge-secondary">
                         {cart?.length > 0 ? cart.length : "0"}
                       </span>
                       <span className="text-3xl   ">
@@ -56,16 +54,22 @@ const Navbar = ({ children }) => {
                     </div>
                   </Link>
                 </li>
-                <li>
-                  <Link to="/login"> Login</Link>
+                <li className="px-5">
+                  {user ? <LogOut /> : <Link to="/login"> Login</Link>}
                 </li>
-                <li>
-                  <Link
-                    to="/signup"
-                    className=" rounded-full px-8  bg-[#E51A4B] text-[18px] text-white"
-                  >
-                    Sign up
-                  </Link>
+                <li className="">
+                  {user ? (
+                    <Link to="/my-order">
+                      <span>{user?.displayName}</span>{" "}
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/signup"
+                      className=" rounded-full py-0 px-7 p-0  bg-[#E51A4B] text-[18px] text-white"
+                    >
+                      Sign up
+                    </Link>
+                  )}
                 </li>
               </ul>
             </div>
@@ -77,12 +81,27 @@ const Navbar = ({ children }) => {
           <label for="my-drawer-3" class="drawer-overlay"></label>
           <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
             <li>
-              <a>
-                <BsCartPlus />
-              </a>
+              <Link to="/cart">
+                <div class="indicator">
+                  <span class="indicator-item badge badge-secondary" refetch>
+                    {cart?.length > 0 ? cart.length : "0"}
+                  </span>
+                  <span className="text-3xl   ">
+                    <BsCartPlus />
+                  </span>
+                </div>
+              </Link>
+            </li>
+            <li className="px-5">
+              {user ? <LogOut /> : <Link to="/login"> Login</Link>}
             </li>
             <li>
-              <Link to="/contact">Cotanct</Link>
+              <Link
+                to="/signup"
+                className=" rounded-full px-8  bg-[#E51A4B] text-[18px] text-white"
+              >
+                Sign up
+              </Link>
             </li>
           </ul>
         </div>

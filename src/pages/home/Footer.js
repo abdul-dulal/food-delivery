@@ -29,7 +29,7 @@ const Footer = () => {
             </a>
           </li>
         </div>
-        <div className="list-none md:mt-4">
+        <div className="list-none md:mt-4 lg:mt-0">
           <h1 className="font-bold uppercase mb-3">Support</h1>
           <li>
             <a href="#" className="hover:tracking-[.30em] duration-1000">
@@ -52,8 +52,8 @@ const Footer = () => {
             </a>
           </li>
         </div>
-        <div className=" md:mt-4">
-          <h1 className="font-bold uppercase mb-3">Fllow Us</h1>
+        <div className=" md:mt-4 lg:mt-0">
+          <h1 className="font-bold uppercase mb-3 ">Fllow Us</h1>
           <div className="list-none flex">
             <li className="p-2 text-[#0D8AF0] text-3xl ">
               <a href="">

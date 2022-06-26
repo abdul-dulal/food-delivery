@@ -7,6 +7,7 @@ import {
 import auth from "../firebase.init";
 import { useNavigate } from "react-router-dom";
 import logo from "../assets/images/logo2.png";
+import icon from "../assets/images/google.png";
 const Signup = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -17,10 +18,6 @@ const Signup = () => {
   const onSubmit = (data) => {
     createUserWithEmailAndPassword(data.email, data.password);
     reset();
-  };
-  const google = () => {
-    signInWithGoogle();
-    console.log("click");
   };
 
   if (user || gUser) {
@@ -73,10 +70,25 @@ const Signup = () => {
                 Login
               </button>
             </div>
+            <p>
+              You have already an account?
+              <span
+                className="text-red-700 cursor-pointer ml-1"
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </span>
+            </p>
           </form>
           <div class="divider">OR</div>
-          <button class="btn btn-secondary" onClick={google}>
-            Wide
+          <button
+            class="py-3 border-2 flex justify-center items-center rounded-md"
+            onClick={() => signInWithGoogle()}
+          >
+            Contiune With Google{" "}
+            <span>
+              <img src={icon} className="w-7 ml-2" alt="" />
+            </span>
           </button>
         </div>
       </div>

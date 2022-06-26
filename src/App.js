@@ -12,26 +12,31 @@ import Lunch from "./pages/home/Lunch";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Order from "./pages/Order";
-
-// google map key AIzaSyDjwVR5XBFSDWWwR38tv9JSqbu7Et2gyC8
+import PrivateRoute from "./component/PrivateRoute";
+import Myorder from "./pages/Myorder";
 
 function App() {
   return (
     <div>
       <Navbar>
         <Routes>
+          <Route path="/home" element={<Home />} />
           <Route path="/" element={<Home />}>
             <Route path="breakfast" element={<Breakfirst />} />
             <Route index element={<Lunch />} />
             <Route path="dinner" element={<Dinner />} />
           </Route>
-          <Route path="/order/:id" element={<Order />} />
+          <Route
+            path="/order/:id"
+            element={<PrivateRoute>{<Order />}</PrivateRoute>}
+          />
           <Route path="/blog" element={<Blogs />} />
           <Route path="/payment/:id" element={<Payment />} />
 
           <Route path="/cart" element={<AddtoCart />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/my-order" element={<Myorder />} />
         </Routes>
       </Navbar>
       <ToastContainer />

@@ -12,8 +12,8 @@ const AddtoCart = () => {
     refetch,
     data: order,
   } = useQuery("repoData", () =>
-    fetch(`http://localhost:4000/order?email=${email}`).then((res) =>
-      res.json()
+    fetch(`https://still-tundra-10310.herokuapp.com/order?email=${email}`).then(
+      (res) => res.json()
     )
   );
   if (isLoading) {

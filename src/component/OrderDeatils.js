@@ -1,11 +1,14 @@
 import React from "react";
 import { AiTwotoneDelete } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 const OrderDeatils = ({ order, refetch }) => {
   const { name, image, quantity, price, _id } = order;
 
+  const navigate = useNavigate();
+
   const cancelOrder = () => {
-    fetch(`http://localhost:4000/deleteorder/${_id}`, {
+    fetch(`https://still-tundra-10310.herokuapp.com/deleteorder/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -22,8 +25,8 @@ const OrderDeatils = ({ order, refetch }) => {
         </div>
         <div className=" mt-4">
           <label className="text-xl ">{name}</label>
-          <p>{quantity}</p>
-          <p> $ {price}</p>
+          <p> Quantity : {quantity}</p>
+          <p> Price: $ {price}</p>
         </div>
       </div>
       <div className="mt-4">
@@ -33,6 +36,12 @@ const OrderDeatils = ({ order, refetch }) => {
         >
           <AiTwotoneDelete />
         </span>
+        <button
+          onClick={() => navigate(`/payment/${_id}`)}
+          className=" bg-red-700 px-6 py-2 text-white rounded-md mt-3"
+        >
+          Payment
+        </button>
       </div>
     </div>
   );

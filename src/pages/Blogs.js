@@ -6,7 +6,7 @@ import blog3 from "../assets/images/architecture-building-city-2047397.png";
 const Blogs = () => {
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 px-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-12">
         <div>
           <img src={avatar} className="w-16" alt="" />
           <h1>hello</h1>
@@ -34,7 +34,7 @@ const Blogs = () => {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-4 px-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-12 mt-[350px] lg:mt-0 md:mt-0">
         <div>
           <img src={avatar} className="w-16" alt="" />
           <h1>hello</h1>
@@ -62,7 +62,7 @@ const Blogs = () => {
           </h1>
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-4 px-12">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 px-12 mt-[350px] lg:mt-0 md:mt-0">
         <div>
           <img src={avatar} className="w-16" alt="" />
           <h1>hello</h1>
